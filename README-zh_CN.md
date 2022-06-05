@@ -24,7 +24,7 @@
 
 Apple Dictionary 中词语“曖昧”的搜索结果。
 
-![](/Users/lzzet/Desktop/apple-dictionary-extractor/docs/image-1.png)
+![](./docs/image-1.png)
 
 词语“曖昧”解析为 json 的结果。
 
