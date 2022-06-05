@@ -1,26 +1,26 @@
 # apple-dictionary-extractor
 
-English | [简体中文](./README-zh_CN.md)
+[English](./README.md) | 简体中文
 
-I learned about the structure of Apple Dictionary data file from an exciting [blog](https://fmentzer.github.io/posts/2020/dictionary/), thanks to the author fmentzer!
+我在一篇令人兴奋的[博客](https://fmentzer.github.io/posts/2020/dictionary/)中了解到 Apple Dictionary 数据文件的结构，感谢作者 fmentzer！
 
-This tool is use to extract entries from Apple Dictionary data file. Apple Dictionary is an application to look up words in various languages, which is available in macOS and iOS.
+这个工具用于从 Apple Dictionary 数据文件中提取条目。 Apple Dictionary 是用于查询各种语言的单词的应用程序，可以在 macOS 和 iOS 中使用。
 
-Supported dictionaries:
+支持的词典：
 
-| Name                          | Feature       |
-| ----------------------------- | ------------- |
-| Simplified Chinese - Japanese | Parse to json |
+| 名称          | 特性         |
+| ------------- | ------------ |
+| 简体中文-日语 | 解析为  json |
 
-## How to Run
+## 运行方式
 
-**1**: Check that the dictionary data has been downloaded in Apple Dictionary (macOS).
+**1**: 检查字典数据是否已经在 Apple Dictionary (macOS) 中下载。
 
-**2**: Find and copy data file from `/System/Library/AssetsV2/com_apple_MobileAsset_DictionaryServices_dictionaryOSX` to `apple-dictionary-extractor/data`. For example, "Simplified Chinese - Japanese" Dictionary data file is in `AssetData/Simplified Chinese - Japanese.dictionary/Contents/Resources/Body.data`.
+**2**: 在 `/System/Library/AssetsV2/com_apple_MobileAsset_DictionaryServices_dictionaryOSX` 中搜寻数据文件，并复制到 `apple-dictionary-extractor/data`。例如，字典《简体中文-日语》位于 `AssetData/Simplified Chinese - Japanese.dictionary/Contents/Resources/Body.data`。
 
-**3**: Configure `main.py` and run `python main.py`
+**3**: 配置 `main.py` 然后运行 `python main.py`。
 
-## Example
+## 例子
 
 ```json
 {
