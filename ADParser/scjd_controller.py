@@ -243,7 +243,7 @@ class SCJDStateMachine:
 					self.push_node(SCJDStateMachine.Node.HV_SPAN)
 
 				elif 'gramb' in attrs_class_values:
-					self.push_node(SCJDStateMachine.Node.HV_SPAN)
+					self.push_node(SCJDStateMachine.Node.GRAMB_SPAN)
 					if self.get_state() == SCJDStateMachine.State.BEGIN:
 						self.sta = SCJDStateMachine.State.GRAMB
 
