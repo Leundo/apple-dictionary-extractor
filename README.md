@@ -8,9 +8,9 @@ This tool is use to extract entries from Apple Dictionary data file. Apple Dicti
 
 Supported dictionaries:
 
-| Name                          | Feature       |
-| ----------------------------- | ------------- |
-| Simplified Chinese - Japanese | Parse to json |
+| Name                          | Feature                      |
+| ----------------------------- | ---------------------------- |
+| Simplified Chinese - Japanese | Parse to json and save to db |
 
 ## How to Run
 

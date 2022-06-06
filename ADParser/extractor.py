@@ -1,10 +1,16 @@
 import zlib
 import itertools
 import os
+from tqdm import tqdm
 from ADParser.xml_parser import parse_xml, AppleDictionary
+from ADParser.db_util import creat_table, insert_entry
 
 __DATA_FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'simplified_chinese_japanese.data')
 
+def creat_table_factory(dictionary):
+	def creat_table_():
+		creat_table(dictionary)
+	return creat_table_
 
 def parse_xml_factory(dictionary):
 	def parse_xml_(xml_it):
@@ -34,6 +40,11 @@ def save_factory(path):
 		with open(path, 'a+') as f:
 			f.write(f'{list(entry_it)}\n')
 	return save
+
+def save_entry_to_db_factory(dictionary):
+	def save_entry_to_db(entry_it):
+		insert_entry(entry_it, dictionary)
+	return save_entry_to_db
 
 """
 Any adjacent XML strings are separated by LF character and 4 bytes, so total separated bytes is 5.
@@ -69,10 +80,16 @@ def read_date(path=__DATA_FILE_PATH):
 			if len(content_bytes) == 0:
 				break
 
-def extract(handle, store, path):
+def extract(handle, store, path, pre_execute=None, is_tqdm=False):
+	if pre_execute is not None:
+		pre_execute()
 	date_it = read_date(path)
-	for entry_it in map(handle, map(split, date_it)):
-		store(entry_it)
+	if is_tqdm:
+		for entry_it in tqdm(map(handle, map(split, date_it))):
+			store(entry_it)
+	else:
+		for entry_it in map(handle, map(split, date_it)):
+			store(entry_it)
 
 
 if __name__ == '__main__':
