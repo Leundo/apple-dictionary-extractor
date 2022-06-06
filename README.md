@@ -26,7 +26,7 @@ The word "曖昧" show in Apple Dictionary.
 
 ![](./docs/image-1.png)
 
-The result of a word "曖昧" parse to json.
+This is the result of parsing a word "曖昧" to json.
 
 ```json
 {
